@@ -82,7 +82,7 @@ resource "azurerm_virtual_machine" "kartikeshn-vm01" {
   storage_os_disk {
     name              = "kartikeshnvm01os"
     caching           = "ReadWrite"
-    create_option     = "FromImage"
+    create_option     = "Attach"
     managed_disk_type = "Standard_LRS"
   }
   os_profile {
