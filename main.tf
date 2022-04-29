@@ -24,7 +24,7 @@ provider "azurerm" {
 data "azurerm_client_config" "current" {}
 # Create our Resource Group - Jonnychipz-RG
 resource "azurerm_resource_group" "rg" {
-  name     = "kartikeshn-app01"
+  name     = "kartikeshn-app001"
   location = "UK South"
 }
 # Create our Virtual Network - kartikeshn-VNET
