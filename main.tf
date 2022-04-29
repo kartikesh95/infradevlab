@@ -83,6 +83,7 @@ resource "azurerm_virtual_machine" "kartikeshn-vm01" {
     name              = "kartikeshnvm01os"
     caching           = "ReadWrite"
     create_option     = "Attach"
+    managed_disk_id   = "/subscriptions/5cc96e7f-0fbb-4109-933a-42f31f8deee8/resourceGroups/KARTIKESHN-APP001/providers/Microsoft.Compute/disks/kartikeshnvm01os"
     managed_disk_type = "Standard_LRS"
   }
   os_profile {
