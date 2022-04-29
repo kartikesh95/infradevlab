@@ -1,6 +1,6 @@
 terraform {
   backend "azurerm" {
-    resource_group_name  = "kartikeshn-tfstate"
+ //   resource_group_name  = "kartikeshn-tfstate"
     storage_account_name = "kartikeshntfstate"
     container_name       = "tfstate"
     key                  = "tf/terraform.tfstate"
