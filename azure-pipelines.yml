@@ -10,10 +10,10 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- task: TerraformInstaller
+- task: TerraformInstaller@2
   inputs:
     terraformVersion: 'latest'
-- task: TerraformInit
+- task: TerraformInit@2
   inputs:
     provider: 'azurerm'
     command: 'init'
@@ -22,12 +22,12 @@ steps:
     backendAzureRmStorageAccountName: 'kartikeshntfstate'
     backendAzureRmContainerName: 'tfstate'
     backendAzureRmKey: 'kgV/Lm1yzv/AJwrlgTCXOGn9zcEPbHkfIx9sHymxUIqTb8cQRm0PINK2Dcc3A+5YOOQmb5jB3NA39ZM6FexfCw=='
-- task: TerraformPlan
+- task: TerraformPlan@2
   inputs:
     provider: 'azurerm'
     command: 'plan'
     environmentServiceNameAzureRM: 'kartikeshn-TF-SPN'
-- task: TerraformValidateAndApply
+- task: TerraformValidateAndApply@2
   inputs:
     provider: 'azurerm'
     command: 'apply'
