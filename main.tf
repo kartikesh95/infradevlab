@@ -68,7 +68,7 @@ resource "azurerm_network_interface" "vmnic" {
 }
 # Create our Virtual Machine - Kartikeshn-VM01
 resource "azurerm_virtual_machine" "kartikeshn-vm01" {
-  name                  = "jonnychipzvm01"
+  name                  = "kartikeshnvm01"
   location              = azurerm_resource_group.rg.location
   resource_group_name   = azurerm_resource_group.rg.name
   network_interface_ids = [azurerm_network_interface.vmnic.id]
