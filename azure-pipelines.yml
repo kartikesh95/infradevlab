@@ -11,9 +11,11 @@ pool:
 
 steps:
 - task: TerraformInstaller@0
+  name: TerraformInstallLatest
   inputs:
     terraformVersion: 'latest'
 - task: TerraformTaskV2@2
+  name: TerraformInit
   inputs:
     provider: 'azurerm'
     command: 'init'
@@ -23,11 +25,13 @@ steps:
     backendAzureRmContainerName: 'tfstate'
     backendAzureRmKey: 'kgV/Lm1yzv/AJwrlgTCXOGn9zcEPbHkfIx9sHymxUIqTb8cQRm0PINK2Dcc3A+5YOOQmb5jB3NA39ZM6FexfCw=='
 - task: TerraformTaskV2@2
+  name: TerraformPlan
   inputs:
     provider: 'azurerm'
     command: 'plan'
     environmentServiceNameAzureRM: 'kartikeshn-TF-SPN'
 - task: TerraformTaskV2@2
+  name: TerraformApply
   inputs:
     provider: 'azurerm'
     command: 'apply'
