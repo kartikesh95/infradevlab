@@ -1,0 +1,38 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: TerraformInstaller@0
+  name: TerraformInstallLatest
+  inputs:
+    terraformVersion: 'latest'
+- task: TerraformTaskV2@2
+  name: TerraformInit
+  inputs:
+    provider: 'azurerm'
+    command: 'init'
+    backendServiceArm: 'kartikeshn-TF-SPN'
+    backendAzureRmResourceGroupName: 'kartikeshn-tfstate'
+    backendAzureRmStorageAccountName: 'kartikeshntfstate'
+    backendAzureRmContainerName: 'tfstate'
+    backendAzureRmKey: 'kgV/Lm1yzv/AJwrlgTCXOGn9zcEPbHkfIx9sHymxUIqTb8cQRm0PINK2Dcc3A+5YOOQmb5jB3NA39ZM6FexfCw=='
+- task: TerraformTaskV2@2
+  name: TerraformPlan
+  inputs:
+    provider: 'azurerm'
+    command: 'plan'
+    environmentServiceNameAzureRM: 'kartikeshn-TF-SPN'
+- task: TerraformTaskV2@2
+  name: TerraformApply
+  inputs:
+    provider: 'azurerm'
+    command: 'apply'
+    environmentServiceNameAzureRM: 'kartikeshn-TF-SPN'
