@@ -1,20 +1,11 @@
 terraform {
-data "terraform_remote_state" "remstate" {
-  backend = "azurerm"
-  config = {
-    storage_account_name = "kartikeshntfstate"
-    container_name       = "tfstate"
-    key                  = "tf/terraform.tfstate"
-    access_key           = "kgV/Lm1yzv/AJwrlgTCXOGn9zcEPbHkfIx9sHymxUIqTb8cQRm0PINK2Dcc3A+5YOOQmb5jB3NA39ZM6FexfCw=="
-  }
-}
- /*backend "azurerm" {
+backend "azurerm" {
  //   resource_group_name  = "kartikeshn-tfstate"
     storage_account_name = "kartikeshntfstate"
     container_name       = "tfstate"
     key                  = "tf/terraform.tfstate"
     access_key           = "kgV/Lm1yzv/AJwrlgTCXOGn9zcEPbHkfIx9sHymxUIqTb8cQRm0PINK2Dcc3A+5YOOQmb5jB3NA39ZM6FexfCw=="
-  }*/
+  }
 
   required_providers {
     azurerm = {
