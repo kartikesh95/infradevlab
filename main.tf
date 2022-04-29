@@ -73,6 +73,7 @@ resource "azurerm_virtual_machine" "kartikeshn-vm01" {
   resource_group_name   = azurerm_resource_group.rg.name
   network_interface_ids = [azurerm_network_interface.vmnic.id]
   vm_size               = "Standard_B2s"
+  delete_os_disk_on_termination  = true
   storage_image_reference {
     publisher = "MicrosoftWindowsServer"
     offer     = "WindowsServer"
