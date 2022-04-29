@@ -13,3 +13,11 @@ steps:
 - task: TerraformInstaller@0
   inputs:
     terraformVersion: 'latest'
+- task: TerraformTaskV2@2
+  inputs:
+    provider: 'azurerm'
+    command: 'init'
+    backendServiceArm: 'kartikeshn-TF-SPN'
+    backendAzureRmResourceGroupName: 'kartikeshn-tfstate'
+    backendAzureRmStorageAccountName: 'kartikeshntfstate'
+    backendAzureRmContainerName: 'tfstate'
