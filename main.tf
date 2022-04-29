@@ -4,6 +4,7 @@ terraform {
     storage_account_name = "kartikeshntfstate"
     container_name       = "tfstate"
     key                  = "tf/terraform.tfstate"
+    access_key           = "kgV/Lm1yzv/AJwrlgTCXOGn9zcEPbHkfIx9sHymxUIqTb8cQRm0PINK2Dcc3A+5YOOQmb5jB3NA39ZM6FexfCw=="
   }
 
   required_providers {
