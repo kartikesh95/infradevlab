@@ -25,15 +25,3 @@ steps:
     backendAzureRmStorageAccountName: 'kartikeshntfstate'
     backendAzureRmContainerName: 'tfstate'
     backendAzureRmKey: 'tf/terraform.tfstate'
-- task: TerraformTaskV2@2
-  name: TerraformPlan
-  inputs:
-    provider: 'azurerm'
-    command: 'plan'
-    environmentServiceNameAzureRM: 'kartikeshn-TF-SPN'
-- task: TerraformTaskV2@2
-  name: TerraformApply
-  inputs:
-    provider: 'azurerm'
-    command: 'apply'
-    environmentServiceNameAzureRM: 'kartikeshn-TF-SPN'
