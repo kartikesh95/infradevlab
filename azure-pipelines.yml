@@ -24,7 +24,7 @@ steps:
     backendAzureRmResourceGroupName: 'kartikeshn-tfstate'
     backendAzureRmStorageAccountName: 'kartikeshntfstate'
     backendAzureRmContainerName: 'tfstate'
-    backendAzureRmKey: $(sakey)
+    backendAzureRmKey: 'tf/terraform.tfstate'
 - task: TerraformTaskV2@2
   name: TerraformPlan
   inputs:
