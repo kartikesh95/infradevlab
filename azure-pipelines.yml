@@ -1,4 +1,5 @@
 # Starter pipeline
+
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
@@ -15,7 +16,15 @@ steps:
   inputs:
     terraformVersion: 'latest'
 
-
+- task: TerraformTaskV4@4
+  inputs:
+    provider: 'azurerm'
+    command: 'init'
+    backendServiceArm: 'kartlab-tf-spn'
+    backendAzureRmResourceGroupName: 'kartikeshn-tfstate'
+    backendAzureRmStorageAccountName: 'kartikeshntfstate'
+    backendAzureRmContainerName: 'tfstate'
+    backendAzureRmKey: 'tf/terraform.tfstate'
 
 - task: TerraformTaskV4@4
   inputs:
