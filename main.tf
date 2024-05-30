@@ -3,8 +3,8 @@ terraform {
     resource_group_name  = "kartikeshn-tfstate"
     storage_account_name = "kartikeshntfstate"
     container_name       = "tfstate"
-    key                  = "tf/terraform.tfstate"
-    access_key           = "kgV/Lm1yzv/AJwrlgTCXOGn9zcEPbHkfIx9sHymxUIqTb8cQRm0PINK2Dcc3A+5YOOQmb5jB3NA39ZM6FexfCw=="
+    key                  = "terraform.tfstate"
+    access_key           = "5rW0sSZmjMPQFxc6/nH15QUGlYrMfLDu5Nr8uiqBsD3WWLcXz542qBdIo0ApA8smTk6cZ6hIkFuX+AStLui2Nw=="
   }
 
   required_providers {
