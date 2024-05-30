@@ -21,9 +21,9 @@ steps:
       $ipAddress = (Invoke-WebRequest -Uri "http://ifconfig.me").Content
       Write-Host "Agent IP Address: $ipAddress"
       # Set the IP address as a pipeline variable
-      Write-Host "##vso[task.setvariable variable=AgentIPAddress]$ipAddress"
-      echo "The IP address of the agent is: $(AgentIPAddress)"
-      displayName: 'Display Agent IP Address'
+      # Write-Host "##vso[task.setvariable variable=AgentIPAddress]$ipAddress"
+      # echo "The IP address of the agent is: $(ipAddress)"
+      # displayName: 'Display Agent IP Address'
 
 - task: TerraformInstaller@0
   name: TerraformInstallLatest
