@@ -17,17 +17,26 @@ steps:
     terraformVersion: 'latest'
 
 - task: TerraformTaskV4@4
+  name: Init
   inputs:
     provider: 'azurerm'
     command: 'init'
-    backendServiceArm: 'kartlab-tf-spn'
+    backendServiceArm: 'LZ1(1)(5cc96e7f-0fbb-4109-933a-42f31f8deee8)'
     backendAzureRmResourceGroupName: 'kartikeshn-tfstate'
     backendAzureRmStorageAccountName: 'kartikeshntfstate'
     backendAzureRmContainerName: 'tfstate'
-    backendAzureRmKey: 'tf/terraform.tfstate'
+    backendAzureRmKey: 'terraform.tfstate'
 
 - task: TerraformTaskV4@4
+  name: Plan
   inputs:
     provider: 'azurerm'
     command: 'plan'
-    environmentServiceNameAzureRM: 'kartlab-tf-spn'
+    environmentServiceNameAzureRM: 'LZ1(1)(5cc96e7f-0fbb-4109-933a-42f31f8deee8)'
+
+- task: TerraformTaskV4@4
+  name: Apply
+  inputs:
+    provider: 'azurerm'
+    command: 'apply'
+    environmentServiceNameAzureRM: 'LZ1(1)(5cc96e7f-0fbb-4109-933a-42f31f8deee8)'
