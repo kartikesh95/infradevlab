@@ -11,6 +11,20 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
+
+- task: PowerShell@2
+  displayName: 'Get Agent IP Address'
+  inputs:
+    targetType: 'inline'
+    script: |
+      # Get the IP address of the agent
+      $ipAddress = (Invoke-WebRequest -Uri "http://ifconfig.me").Content
+      Write-Host "Agent IP Address: $ipAddress"
+      # Set the IP address as a pipeline variable
+      Write-Host "##vso[task.setvariable variable=AgentIPAddress]$ipAddress"
+      echo "The IP address of the agent is: $(AgentIPAddress)"
+      displayName: 'Display Agent IP Address'
+
 - task: TerraformInstaller@0
   name: TerraformInstallLatest
   inputs:
