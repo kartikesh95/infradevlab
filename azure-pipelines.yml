@@ -26,7 +26,7 @@ steps:
     azureSubscription: 'LZ1(1)(5cc96e7f-0fbb-4109-933a-42f31f8deee8)'
     scriptType: 'bash'
     scriptLocation: 'inlineScript'
-    inlineScript: 'az storage account network-rule add -g kartikeshn-app001 --account-name testsaappkn01 --ip-address 100.10.10.5/32'
+    inlineScript: 'az storage account network-rule add -g kartikeshn-app001 --account-name testsaappkn01 --ip-address 100.10.10.5'
 
 - task: TerraformTaskV4@4
   name: TerraformInstallLatest
