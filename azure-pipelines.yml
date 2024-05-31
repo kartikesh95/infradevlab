@@ -22,13 +22,6 @@ steps:
       Write-Host "Agent IP Address: $ipAddress"
       Add-AzStorageAccountNetworkRule -ResourceGroupName "kartikeshn-app001" -Name "testsaappkn01" -IPAddressOrRange $ipAddress
 
-- task: AzureCLI@2
-  inputs:
-    azureSubscription: 'LZ1(1)(5cc96e7f-0fbb-4109-933a-42f31f8deee8)'
-    scriptType: 'bash'
-    scriptLocation: 'inlineScript'
-    inlineScript: 'az storage account network-rule add -g kartikeshn-app001 --account-name testsaappkn01 --ip-address $(ipAddress)'
-
 - task: TerraformTaskV4@4
   name: TerraformInstallLatest
   inputs:
