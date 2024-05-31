@@ -21,6 +21,7 @@ steps:
       $ipAddress = (Invoke-WebRequest -Uri "http://ifconfig.me").Content
       Write-Host "Agent IP Address: $ipAddress"
       az storage account network-rule add -g kartikeshn-app001 --account-name testsaappkn01 --ip-address 100.10.10.5/32
+      sleep 10
       # Set the IP address as a pipeline variable
       # Write-Host "##vso[task.setvariable variable=AgentIPAddress]$ipAddress"
       # echo "The IP address of the agent is: $(ipAddress)"
