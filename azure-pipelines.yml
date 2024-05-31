@@ -20,6 +20,7 @@ steps:
       # Get the IP address of the agent
       $ipAddress = (Invoke-WebRequest -Uri "http://ifconfig.me").Content
       Write-Host "Agent IP Address: $ipAddress"
+      Add-AzStorageAccountNetworkRule -ResourceGroupName "kartikeshn-app001" -Name "testsaappkn01" -IPAddressOrRange $ipAddress
 
 - task: AzureCLI@2
   inputs:
